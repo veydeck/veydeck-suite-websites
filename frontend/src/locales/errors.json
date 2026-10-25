@@ -1,0 +1,378 @@
+{
+  "IP_WILDCARD_UNSUPPORTED": {
+    "zh-CN": "IP 地址不能使用通配符",
+    "en-US": "IP addresses cannot use wildcards."
+  },
+  "UPSTREAM_QUERY_UNSUPPORTED": {
+    "zh-CN": "上游不能包含查询或片段",
+    "en-US": "The upstream URL cannot contain a query or fragment."
+  },
+  "UPSTREAM_SCHEME_INVALID": {
+    "zh-CN": "上游只支持不含凭据的 HTTP/HTTPS URL",
+    "en-US": "Use an HTTP/HTTPS upstream URL without credentials."
+  },
+  "UPSTREAM_CHARACTERS_INVALID": {
+    "zh-CN": "上游地址包含无效字符",
+    "en-US": "The upstream URL contains invalid characters."
+  },
+  "UPSTREAM_INVALID": {
+    "zh-CN": "上游地址无效",
+    "en-US": "Invalid upstream URL."
+  },
+  "SYMLINK_ACCESS_DENIED": {
+    "zh-CN": "不允许访问软链接",
+    "en-US": "Symbolic links are not allowed."
+  },
+  "SITE_CODE_INVALID": {
+    "zh-CN": "代号须为 1–128 位字母、数字、点、短横线或下划线，以字母或数字开头",
+    "en-US": "The code must be 1–128 letters, digits, dots, hyphens or underscores, starting with a letter or digit."
+  },
+  "SITE_SAVE_INTERRUPTED": {
+    "zh-CN": "保存任务中断",
+    "en-US": "The website save task was interrupted."
+  },
+  "SITE_CREATE_INTERRUPTED": {
+    "zh-CN": "创建任务中断",
+    "en-US": "The website creation task was interrupted."
+  },
+  "SITE_CODE_IMMUTABLE": {
+    "zh-CN": "创建后不能修改代号；修改域名不影响代号和目录",
+    "en-US": "The code cannot be changed after creation. Domain changes do not affect the code or directory."
+  },
+  "SITE_DELETE_INTERRUPTED": {
+    "zh-CN": "删除任务中断",
+    "en-US": "The website deletion task was interrupted."
+  },
+  "CONFIGURATION_ID_INVALID": {
+    "zh-CN": "发布 ID 无效",
+    "en-US": "Invalid configuration ID."
+  },
+  "BACKUP_CONFIGURATION_BUSY": {
+    "zh-CN": "发布过程中不能备份",
+    "en-US": "Wait for the configuration change to finish before backing up."
+  },
+  "LISTENER_PROTOCOL_CONFLICT": {
+    "zh-CN": "同一监听端口不能混用 HTTP 和 HTTPS",
+    "en-US": "HTTP and HTTPS cannot share the same listening port."
+  },
+  "LISTENER_DOMAIN_CONFLICT": {
+    "zh-CN": "同一监听端口存在重复域名",
+    "en-US": "Duplicate domains on the same listening port."
+  },
+  "LISTENER_ADDRESS_CONFLICT": {
+    "zh-CN": "同端口不能混用通配 IP 和具体 IP",
+    "en-US": "Wildcard and specific IP addresses cannot share a port."
+  },
+  "HASH_BUCKET_SIZE_INVALID": {
+    "zh-CN": "域名哈希桶大小必须为 32～65536 之间的 2 的幂",
+    "en-US": "The domain hash bucket size must be a power of two between 32 and 65536."
+  },
+  "DOMAIN_REQUIRED": {
+    "zh-CN": "域名或 IP 必填",
+    "en-US": "Enter a domain or IP address."
+  },
+  "DOMAIN_TOO_LONG": {
+    "zh-CN": "域名或 IP 长度超出限制",
+    "en-US": "The domain or IP address exceeds the length limit."
+  },
+  "DOMAIN_NOT_NORMALIZED": {
+    "zh-CN": "域名未规范化",
+    "en-US": "The domain has not been normalized."
+  },
+  "DOMAIN_INVALID": {
+    "zh-CN": "域名格式无效",
+    "en-US": "Invalid domain format."
+  },
+  "BACKUP_INTERRUPTED": {
+    "zh-CN": "备份任务中断",
+    "en-US": "The backup task was interrupted."
+  },
+  "BACKUP_PATH_INVALID": {
+    "zh-CN": "备份路径无效",
+    "en-US": "Invalid backup path."
+  },
+  "ENGINE_CONFIRMATION_TIMEOUT": {
+    "zh-CN": "引擎未确认加载新配置",
+    "en-US": "Nginx did not confirm that the new configuration was loaded."
+  },
+  "CERTIFICATE_REFERENCE_MISSING": {
+    "zh-CN": "引用的证书不存在",
+    "en-US": "The referenced certificate does not exist."
+  },
+  "PERFORMANCE_OUT_OF_RANGE": {
+    "zh-CN": "性能参数超出允许范围",
+    "en-US": "A performance parameter is outside the allowed range."
+  },
+  "PERFORMANCE_SAVE_INTERRUPTED": {
+    "zh-CN": "性能配置保存任务中断",
+    "en-US": "The performance configuration task was interrupted."
+  },
+  "RECOVERY_RECORD_INVALID": {
+    "zh-CN": "恢复记录格式无效",
+    "en-US": "Invalid recovery record format."
+  },
+  "DATABASE_UNAVAILABLE": {
+    "zh-CN": "数据库状态不可用",
+    "en-US": "The database is unavailable."
+  },
+  "FILES_BUSY": {
+    "zh-CN": "文件管理忙",
+    "en-US": "The file operation is busy. Try again later."
+  },
+  "PROXY_UPSTREAM_INVALID": {
+    "zh-CN": "无效上游",
+    "en-US": "Invalid proxy upstream URL."
+  },
+  "SITE_ID_INVALID": {
+    "zh-CN": "无效网站 ID",
+    "en-US": "Invalid website ID."
+  },
+  "CERTIFICATE_ID_INVALID": {
+    "zh-CN": "无效证书 ID",
+    "en-US": "Invalid certificate ID."
+  },
+  "BACKUP_RESPONSE_FAILED": {
+    "zh-CN": "无法创建备份响应",
+    "en-US": "The backup download response could not be created."
+  },
+  "MIGRATION_DIRECTORY_CONFLICT": {
+    "zh-CN": "旧目录和目标目录同时存在，停止迁移以保留文件",
+    "en-US": "Both the old and target directories exist. Migration stopped to preserve files."
+  },
+  "LOG_TYPE_INVALID": {
+    "zh-CN": "未知日志类型",
+    "en-US": "Unknown log type."
+  },
+  "ENGINE_RUNTIME_UNAVAILABLE": {
+    "zh-CN": "未连接 Agent Runtime，无法控制引擎",
+    "en-US": "The Agent Runtime is not connected. Nginx cannot be controlled."
+  },
+  "AUTHORITY_ID_INVALID": {
+    "zh-CN": "根证书 ID 无效",
+    "en-US": "Invalid root certificate ID."
+  },
+  "AUTHORITY_NOT_FOUND": {
+    "zh-CN": "根证书不存在",
+    "en-US": "The root certificate does not exist."
+  },
+  "AUTHORITY_KEY_MISMATCH": {
+    "zh-CN": "根证书与私钥不匹配",
+    "en-US": "The root certificate and private key do not match."
+  },
+  "AUTHORITY_CREATE_INTERRUPTED": {
+    "zh-CN": "根证书创建任务中断",
+    "en-US": "The root certificate creation task was interrupted."
+  },
+  "AUTHORITY_NAME_INVALID": {
+    "zh-CN": "根证书名称须为 1–64 字节，不含控制字符",
+    "en-US": "The root certificate name must be 1–64 bytes without control characters."
+  },
+  "AUTHORITY_NOT_VALID": {
+    "zh-CN": "根证书尚未生效或已经过期",
+    "en-US": "The root certificate is not yet valid or has expired."
+  },
+  "AUTHORITY_VALIDITY_INVALID": {
+    "zh-CN": "根证书有效期须为 1–99 年",
+    "en-US": "Root certificate validity must be 1–99 years."
+  },
+  "AUTHORITY_GENERATE_INTERRUPTED": {
+    "zh-CN": "根证书生成任务中断",
+    "en-US": "The root certificate generation task was interrupted."
+  },
+  "PORT_INVALID": {
+    "zh-CN": "监听端口不能为 0",
+    "en-US": "The listening port cannot be 0."
+  },
+  "PRIVATE_KEY_INVALID": {
+    "zh-CN": "私钥 PEM 无效或需要密码",
+    "en-US": "The private key PEM is invalid or password protected."
+  },
+  "SYSTEM_TIME_INVALID": {
+    "zh-CN": "系统时间无效",
+    "en-US": "Invalid system time."
+  },
+  "ORGANIZATION_INVALID": {
+    "zh-CN": "组织须为 0–128 字节，不含控制字符",
+    "en-US": "The organization must be 0–128 bytes without control characters."
+  },
+  "SITE_NOT_FOUND": {
+    "zh-CN": "网站不存在",
+    "en-US": "The website does not exist."
+  },
+  "SITE_REVISION_INVALID": {
+    "zh-CN": "网站修订号超出范围",
+    "en-US": "The website revision is outside the allowed range."
+  },
+  "SITE_NAME_INVALID": {
+    "zh-CN": "网站名称须为 1–128 字节",
+    "en-US": "The website name must be 1–128 bytes."
+  },
+  "SITE_DIRECTORY_SYMLINK": {
+    "zh-CN": "网站目录及其父目录不能为软链接",
+    "en-US": "The website directory and its parents cannot be symbolic links."
+  },
+  "CERTIFICATE_VALIDITY_INVALID": {
+    "zh-CN": "网站证书有效期须为 1–99 年",
+    "en-US": "Certificate validity must be 1–99 years."
+  },
+  "CERTIFICATE_DIRECTORY_ID_INVALID": {
+    "zh-CN": "证书 ID 无效",
+    "en-US": "Invalid certificate directory ID."
+  },
+  "CERTIFICATE_PEM_INVALID": {
+    "zh-CN": "证书 PEM 无效",
+    "en-US": "Invalid certificate PEM."
+  },
+  "CERTIFICATE_IN_USE": {
+    "zh-CN": "证书仍被网站引用",
+    "en-US": "The certificate is still used by a website."
+  },
+  "CERTIFICATE_PUBLIC_KEY_INVALID": {
+    "zh-CN": "证书公钥无效",
+    "en-US": "Invalid certificate public key."
+  },
+  "CERTIFICATE_NAME_ENCODING_INVALID": {
+    "zh-CN": "证书名称编码无效",
+    "en-US": "Invalid certificate name encoding."
+  },
+  "CERTIFICATE_KEY_MISMATCH": {
+    "zh-CN": "证书和私钥不匹配",
+    "en-US": "The certificate and private key do not match."
+  },
+  "CERTIFICATE_NOT_VALID": {
+    "zh-CN": "证书尚未生效或已经过期",
+    "en-US": "The certificate is not yet valid or has expired."
+  },
+  "CERTIFICATE_SERIAL_INVALID": {
+    "zh-CN": "证书序列号解析失败",
+    "en-US": "The certificate serial number could not be parsed."
+  },
+  "CERTIFICATE_FINGERPRINT_INVALID": {
+    "zh-CN": "证书指纹解析失败",
+    "en-US": "The certificate fingerprint could not be parsed."
+  },
+  "CERTIFICATE_TIME_INVALID": {
+    "zh-CN": "证书时间解析失败",
+    "en-US": "The certificate time could not be parsed."
+  },
+  "CERTIFICATE_TIME_OUT_OF_RANGE": {
+    "zh-CN": "证书时间超出范围",
+    "en-US": "The certificate time is outside the supported range."
+  },
+  "CERTIFICATE_VALIDITY_OUT_OF_RANGE": {
+    "zh-CN": "证书有效期超出范围",
+    "en-US": "The certificate validity is outside the supported range."
+  },
+  "CERTIFICATE_STORAGE_ID_INVALID": {
+    "zh-CN": "证书目录标识无效",
+    "en-US": "Invalid certificate storage ID."
+  },
+  "CERTIFICATE_ISSUE_INTERRUPTED": {
+    "zh-CN": "证书签发任务中断",
+    "en-US": "The certificate issuance task was interrupted."
+  },
+  "CERTIFICATE_CHAIN_INVALID": {
+    "zh-CN": "证书链 PEM 无效",
+    "en-US": "Invalid certificate chain PEM."
+  },
+  "CERTIFICATE_CHAIN_EMPTY": {
+    "zh-CN": "证书链不能为空",
+    "en-US": "The certificate chain cannot be empty."
+  },
+  "SITE_DIRECTORY_EXISTS": {
+    "zh-CN": "该代号对应的目录已存在，请修改代号或先在文件管理中处理保留文件",
+    "en-US": "This code's directory already exists. Choose another code or manage the retained files in File Manager."
+  },
+  "DOMAIN_INPUT_INVALID": {
+    "zh-CN": "请输入域名或 IPv4 地址，不含协议、端口和路径",
+    "en-US": "Enter a domain or IPv4 address without a scheme, port or path."
+  },
+  "PATH_CHARACTERS_INVALID": {
+    "zh-CN": "路径包含无效字符",
+    "en-US": "The path contains invalid characters."
+  },
+  "PATH_OUTSIDE_SITE": {
+    "zh-CN": "路径必须位于网站 index 内",
+    "en-US": "The path must remain inside the website index directory."
+  },
+  "MIGRATION_SOURCE_MISSING": {
+    "zh-CN": "迁移源目录不存在",
+    "en-US": "The migration source directory does not exist."
+  },
+  "MIGRATION_DOMAIN_REQUIRED": {
+    "zh-CN": "迁移需要网站主域名",
+    "en-US": "Migration requires a primary website domain."
+  },
+  "RUN_DIRECTORY_INVALID": {
+    "zh-CN": "运行目录包含无效字符",
+    "en-US": "The document root contains invalid characters."
+  },
+  "DOMAIN_COUNT_INVALID": {
+    "zh-CN": "需要 1–64 个域名或 IP",
+    "en-US": "Enter 1–64 domains or IP addresses."
+  },
+  "ADVANCED_CONFIGURATION_TOO_LARGE": {
+    "zh-CN": "高级配置过大",
+    "en-US": "The advanced configuration is too large."
+  },
+  "DEFAULT_AUTHORITY_KEY_MISMATCH": {
+    "zh-CN": "默认根证书和私钥不匹配，请从备份恢复",
+    "en-US": "The built-in root certificate and private key do not match. Restore them from a backup."
+  },
+  "SITE_CODE_EXISTS": {
+    "zh-CN": "代号 {code} 已被使用，请修改代号",
+    "en-US": "The code {code} is already in use. Choose another code."
+  },
+  "DOMAIN_ALREADY_BOUND": {
+    "zh-CN": "端口 {port} 上的域名 {domain} 已绑定网站",
+    "en-US": "The domain {domain} is already bound on port {port}."
+  },
+  "SITE_CREATE_FAILED_FILES_KEPT": {
+    "zh-CN": "{cause}；网站文件已保留在 {path}",
+    "en-US": "{cause}; website files have been retained at {path}."
+  },
+  "SITE_FILES_CLEANUP_FAILED": {
+    "zh-CN": "网站已删除，文件清理失败，请在文件管理中处理：{reason}",
+    "en-US": "The website was deleted, but file cleanup failed. Use File Manager: {reason}"
+  },
+  "RUN_DIRECTORY_MISSING": {
+    "zh-CN": "网站 {name} 的运行目录不存在",
+    "en-US": "The document root for website {name} does not exist."
+  },
+  "ENGINE_CONTROL_FAILED": {
+    "zh-CN": "Nginx 操作失败：{reason}",
+    "en-US": "Nginx operation failed: {reason}"
+  },
+  "CERTIFICATE_CRYPTO_FAILED": {
+    "zh-CN": "证书操作失败：{reason}",
+    "en-US": "Certificate operation failed: {reason}"
+  },
+  "MIGRATION_TARGET_EXISTS": {
+    "zh-CN": "迁移目标已存在：{path}",
+    "en-US": "The migration target already exists: {path}"
+  },
+  "CONFIGURATION_CONFLICT": {
+    "zh-CN": "配置修订号已变化，请刷新后重试",
+    "en-US": "The configuration has changed. Refresh and try again."
+  },
+  "INTERNAL_ERROR": {
+    "zh-CN": "服务内部错误，请检查管理服务日志",
+    "en-US": "Internal service error. Check the manager logs."
+  },
+  "INVALID_REQUEST": {
+    "zh-CN": "请求格式或参数无效",
+    "en-US": "Invalid request format or parameters."
+  },
+  "HTTP_ERROR": {
+    "zh-CN": "请求失败（HTTP {status}）",
+    "en-US": "Request failed (HTTP {status})."
+  },
+  "UNAUTHORIZED": {
+    "zh-CN": "会话已失效，请重新打开套件",
+    "en-US": "The session has expired. Reopen the suite."
+  },
+  "NETWORK_ERROR": {
+    "zh-CN": "网络请求失败，请检查连接后重试",
+    "en-US": "Network request failed. Check the connection and try again."
+  }
+}

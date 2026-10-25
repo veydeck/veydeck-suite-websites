@@ -1,0 +1,187 @@
+/* 窗口布局与公开 VDL Token。 */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: var(--vdl-font-family);
+  font-size: 13px;
+  color: var(--vdl-text-primary);
+  background: var(--vdl-bg-canvas);
+}
+.workspace {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+}
+.workspace-sidebar {
+  min-height: 0;
+  overflow: auto;
+  padding: var(--vdl-space-4) var(--vdl-space-3);
+  border-inline-end: 1px solid var(--vdl-border-subtle);
+  background: var(--vdl-bg-panel);
+}
+.workspace-main {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vdl-space-3);
+  padding: var(--vdl-space-4);
+}
+.section-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.page-title {
+  margin: 0;
+  font-size: 16px;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.content {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+}
+.section-toolbar {
+  margin-bottom: 14px;
+}
+.muted {
+  color: var(--vdl-text-secondary);
+}
+.mono,
+textarea,
+pre {
+  font-family: var(--vdl-font-mono);
+}
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+label:not(.vl-checkbox):not(.vl-switch) {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid var(--vdl-border-default);
+  border-radius: 6px;
+  padding: 10px;
+  background: var(--vdl-bg-input);
+  color: var(--vdl-text-primary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+textarea:focus {
+  outline: 2px solid var(--vdl-primary);
+  outline-offset: 1px;
+}
+.log {
+  padding: 12px;
+  min-height: 220px;
+  background: var(--vdl-bg-panel);
+  border: 1px solid var(--vdl-border-subtle);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+.path {
+  overflow-wrap: anywhere;
+  padding: 10px;
+  background: var(--vdl-bg-muted);
+}
+input[type="file"] {
+  max-width: 220px;
+}
+small {
+  font-size: 12px;
+}
+@media (max-width: 640px) {
+  .workspace {
+    grid-template-columns: 144px minmax(0, 1fr);
+  }
+  .workspace-sidebar,
+  .workspace-main {
+    padding: var(--vdl-space-2);
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.rule-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--vdl-border-subtle);
+}
+.condition {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.condition label:not(.vl-checkbox):not(.vl-switch) {
+  flex: 1 1 160px;
+}
+
+.log-value {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+[data-ui="site-log-kind"],
+[data-ui="engine-log-kind"] {
+  width: 240px;
+  max-width: 100%;
+}
+
+.certificate-upload {
+  max-width: 800px;
+  padding-block: var(--vdl-space-3);
+}
+
+/* 表格操作与列标题居中对齐，保持同一行内按钮间距稳定。 */
+.table-actions {
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* 列表保持在窗口内，行数由分页组件按可用高度计算。 */
+.content--list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.list-page {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+.list-page .section-toolbar {
+  margin-bottom: 0;
+}
+.list-page > p {
+  margin: 0;
+}

@@ -1,0 +1,27 @@
+[package]
+name = "veydeck-website-manager"
+version = "0.1.0-alpha.1"
+edition = "2024"
+license = "MIT"
+
+[dependencies]
+axum = { version = "0.8", features = ["multipart"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v7", "serde"] }
+rusqlite = { version = "0.38", features = ["bundled", "backup"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+veydeck-suite-runtime-sdk = "=0.1.0-alpha.1"
+openssl = "0.10"
+chrono = { version = "0.4", default-features = false, features = ["std"] }
+tower-http = { version = "0.6", features = ["fs"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+thiserror = "2"
+flate2 = "1"
+tar = "0.4"
+tokio-util = {version="0.7",features=["io"]}
+
+[dev-dependencies]
+tempfile = "3"

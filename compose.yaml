@@ -1,0 +1,59 @@
+services:
+  manager:
+    image: veydeck/website-manager:0.1.0-alpha.1
+    restart: unless-stopped
+    environment:
+      VEYDECK_WEBSITE_DATA_DIR: /data
+      VEYDECK_SUITE_INSTANCE_ID: ${VEYDECK_SUITE_INSTANCE_ID:-00000000-0000-0000-0000-000000000001}
+      VEYDECK_HOST_DATA_DIR: ${VEYDECK_SUITE_DATA_DIR:-/opt/veydeck/data/www/websites}
+      RUST_LOG: info
+    labels:
+      veydeck.owner: suite
+      veydeck.suite.id: veydeck.websites
+      veydeck.service.role: web
+    networks: [veydeck-suite-network]
+    expose: ["8080"]
+    volumes:
+      - ${VEYDECK_SUITE_DATA_DIR:-/opt/veydeck/data/www/websites}:/data
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "3"}
+
+  nginx:
+    image: nginx:1.30.6-trixie@sha256:a7675fcee220f59b4a99f7098c06a0d5d999c2c0ee37c0211efb780536e5cb20
+    restart: unless-stopped
+    network_mode: host
+    read_only: true
+    ulimits:
+      nofile: {soft: 65536, hard: 65536}
+    depends_on:
+      manager: {condition: service_healthy}
+    entrypoint: ["/usr/sbin/nginx"]
+    command: ["-e", "stderr", "-c", "/data/instances/${VEYDECK_SUITE_INSTANCE_ID:-00000000-0000-0000-0000-000000000001}/current/nginx.conf", "-g", "daemon off;"]
+    volumes:
+      - ${VEYDECK_SUITE_DATA_DIR:-/opt/veydeck/data/www/websites}:/data:ro
+      - ${VEYDECK_SUITE_DATA_DIR:-/opt/veydeck/data/www/websites}/instances/${VEYDECK_SUITE_INSTANCE_ID:-00000000-0000-0000-0000-000000000001}/logs:/data/instances/${VEYDECK_SUITE_INSTANCE_ID:-00000000-0000-0000-0000-000000000001}/logs
+    tmpfs: [/tmp]
+    labels:
+      veydeck.owner: suite
+      veydeck.suite.id: veydeck.websites
+      veydeck.service.role: infra
+    healthcheck:
+      test: ["CMD-SHELL", "test -S /data/instances/${VEYDECK_SUITE_INSTANCE_ID:-00000000-0000-0000-0000-000000000001}/logs/engine.sock && kill -0 $$(cat /tmp/veydeck-nginx.pid)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "3"}
+
+networks:
+  veydeck-suite-network:
+    external: true
+    name: veydeck-suite-network

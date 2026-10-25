@@ -1,0 +1,45 @@
+name: Publish Docker Image
+
+run-name: "website-manager image ${{ inputs.version }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 网站管理镜像版本
+        required: true
+        default: 0.1.0-alpha.1
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_REPOSITORY: veydeck/website-manager
+      RELEASE_VERSION: ${{ inputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build image
+        run: ./build-image.sh "$RELEASE_VERSION"
+
+      - name: Push image
+        run: docker push "${IMAGE_REPOSITORY}:${RELEASE_VERSION}"
+
+      - name: Sync Docker Hub README
+        uses: peter-evans/dockerhub-description@v5
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: veydeck/website-manager
+          readme-filepath: README.md
